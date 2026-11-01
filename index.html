@@ -11,7 +11,7 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script>
+ <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/coastal-motion.css"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script><script src="js/coastal-motion.js" defer></script>
 </head>
 <body>
  <a class="skip" href="#main">Skip to main content</a>
@@ -21,7 +21,23 @@
   <nav id="primary-navigation" class="site-nav" aria-label="Main navigation"><a href="index.html" aria-current="page" >Home</a><a href="work.html" >Selected Work</a><a href="about.html" >About</a><a href="contact.html" class="nav-cta" >Contact</a></nav>
  </div></header>
  <main id="main">
+ <div class="scroll-blossom" data-scroll-blossom aria-hidden="true"><img src="assets/blossom.svg" alt="" width="146" height="146"></div>
  <section class="hero" aria-labelledby="home-heading">
+  <div class="hero-water-motion" aria-hidden="true">
+   <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <g class="water-ribbon far" fill="none" stroke-linecap="round">
+     <path d="M-120 578 C130 558 271 590 511 575 S947 561 1174 574 S1509 581 1720 563" stroke="#EBF8F1" stroke-width="7" opacity=".38"/>
+     <path d="M-120 612 C154 598 299 628 544 609 S1003 608 1230 619 S1500 606 1720 610" stroke="#C8EBE6" stroke-width="11" opacity=".28"/>
+    </g>
+    <g class="water-ribbon near" fill="none" stroke-linecap="round">
+     <path d="M-120 645 C124 623 311 654 544 643 S929 637 1159 650 S1500 646 1720 632" stroke="#F9F7EB" stroke-width="5" opacity=".48"/>
+     <path d="M-120 692 C138 675 333 714 560 691 S1028 702 1269 693 S1500 690 1720 680" stroke="#F7F7E9" stroke-width="4" opacity=".37"/>
+    </g>
+    <g class="water-gleam" fill="none" stroke="#FFFFFF" stroke-linecap="round" opacity=".4">
+     <path d="M875 625q57-8 112 0 M1153 664q44-6 93 0 M550 676q61-7 125 0 M1305 715q62-4 122 0" stroke-width="3"/>
+    </g>
+   </svg>
+  </div>
   <div class="petals-layer" aria-hidden="true"></div>
   <div class="container hero-layout">
    <div class="hero-panel">
@@ -36,7 +52,7 @@
     <div class="portrait-caption"><strong>Operations × Technology</strong>Thoughtful solutions. Real people.</div>
    </div>
   </div>
-  <button class="motion-control" type="button" aria-pressed="false" aria-label="Pause decorative petal animation">❚❚ Pause petals</button>
+  <button class="motion-control" type="button" aria-pressed="false" aria-label="Pause all decorative animations">❚❚ Pause motion</button>
  </section>
  <section class="stats" aria-label="Experience highlights"><div class="container stat-grid">
   <div class="stat"><span class="stat-number">10+</span><span class="stat-caption">Years in business operations &amp; team leadership</span></div>
