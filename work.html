@@ -3,7 +3,7 @@
 <head>
  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
  <meta name="theme-color" content="#FBF7F0">
- <meta name="description" content="Case studies of Supply Mover and Schedulicity implementations, plus academic DevOps and software delivery practice.">
+ <meta name="description" content="Professional implementations, client education, DevOps technical projects, and a playable Nibble Fish mini-game.">
  <meta property="og:title" content="Selected Work">
  <meta property="og:description" content="Case studies of Supply Mover and Schedulicity implementations, plus academic DevOps and software delivery practice.">
  <meta property="og:type" content="website">
@@ -11,7 +11,7 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script><script src="js/simulations-3s.js" defer></script><script src="js/work-anchors.js" defer></script>
+ <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/simulations.css"><link rel="stylesheet" href="css/nibble-demo.css?v=work-v2"><script src="js/site.js" defer></script><script src="js/simulations-3s.js" defer></script><script src="js/work-anchors.js" defer></script><script src="js/nibble-demo.js?v=hook-90-keyboard-2" defer></script>
 </head>
 <body>
  <a class="skip" href="#main">Skip to main content</a>
@@ -21,7 +21,7 @@
   <nav id="primary-navigation" class="site-nav" aria-label="Main navigation"><a href="index.html" >Home</a><a href="work.html" aria-current="page" >Selected Work</a><a href="about.html" >About</a><a href="contact.html" class="nav-cta" >Contact</a></nav>
  </div></header>
  <main id="main">
- <section class="page-hero"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Selected work</p><h1>Real problems. <span class="serif-italic">Practical changes.</span></h1><p class="lead">A look at real systems implementation and client education experience, plus technical projects completed during my M.S. in DevOps. Each has its own context and scope.</p></div></section>
+ <section class="page-hero"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Selected work</p><h1>Real problems. <span class="serif-italic">Practical changes.</span></h1><p class="lead">A look at professional systems implementations, client education, graduate technical projects, and independent creative development. Each is clearly labeled by its scope.</p></div></section>
  <section class="container case-study" id="supply-mover"><div class="case-title-row"><div><p class="eyebrow">01 / Professional implementation · 2023</p><h2>Supply Mover</h2><p class="lead">Introducing a business system that could support warehouse and commercial technician workflows.</p></div><div class="case-meta"><span>TAG Chemical Technologies</span><span>Operations Manager</span></div></div>
   <div class="case-body"><div><h3>The need</h3><p>Spreadsheet-based tracking made it harder to keep client, inventory, product, and delivery information organized across a busy operation.</p></div><div><h3>My contribution</h3><p>Supported the selection and implementation of Supply Mover, aligned workflows with daily operations, and created SOPs and supporting documentation.</p></div><div><h3>The outcome</h3><p>More structured tracking, clearer handoffs, and better coordination for weekly activity involving approximately 200 B2B clients and business partners.</p></div></div>
 
@@ -126,6 +126,38 @@
   <div class="learning-list"><article><h3>CI/CD &amp; GitLab</h3><p>Hands-on academic work with version control, pipeline stages, container image workflows, and software delivery automation.</p></article><article><h3>Cloud &amp; observability</h3><p>Coursework with Docker, AWS ECR/EKS, Kubernetes, Prometheus, and Grafana monitoring.</p></article><article><h3>Quality &amp; security</h3><p>Practice with automated testing, code quality, vulnerability scanning, and clear technical documentation.</p></article></div>
   <div class="practice-panel"><p class="eyebrow">Interactive mini exercise</p><h3>What makes a rollout ready?</h3><p>Check the considerations below. This is a simple illustrative checklist, not a scoring tool or a real client assessment.</p><div class="practice-grid"><label class="practice-check"><input type="checkbox" data-practice-check> The users' problem is clear</label><label class="practice-check"><input type="checkbox" data-practice-check> Ownership and scope are agreed</label><label class="practice-check"><input type="checkbox" data-practice-check> Training materials are ready</label><label class="practice-check"><input type="checkbox" data-practice-check> Follow-up support is planned</label></div><div class="practice-progress" role="progressbar" aria-label="Rollout readiness checklist" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><div data-practice-progress></div></div><p class="practice-feedback" data-practice-feedback aria-live="polite"></p></div>
   <p class="note">The examples above describe education and academic projects rather than previous paid engineering roles. For source code, explore <a href="https://github.com/caitmcc165" target="_blank" rel="noopener noreferrer">my GitHub profile ↗</a>.</p>
+ </section>
+ <section class="container case-study" id="nibble-fish">
+  <div class="case-title-row"><div><p class="eyebrow">05 / Personal game development · In progress</p><h2>Nibble Fish</h2><p class="lead">An original watercolor-inspired 2D fishing game I’m developing in Unity, built around catching and collecting fish across different aquatic environments.</p></div><div class="case-meta"><span>Independent creative project</span><span>Game design &amp; development</span></div></div>
+  <p>This small interactive preview captures just one mechanic—aim a hook and catch a fish. It's a lightweight portfolio demonstration with art styled to match this site, rather than the actual Unity game or its full progression systems.</p>
+  <div class="nibble-demo" id="nibble-fish-demo" data-nibble-game>
+    <div class="nibble-head">
+      <div><p class="nibble-kicker">A tiny fishing break · Playable sketch</p>
+        <h3>Nibble Fish <span class="serif-italic">mini pond.</span></h3>
+        <p>A handful of pastel fish, one little hook. See if you can catch three!</p>
+      </div>
+      <div class="nibble-score" aria-label="Fish caught"><span aria-hidden="true">🐟</span> Caught <strong data-nibble-count>0 / 3</strong></div>
+    </div>
+    <div class="nibble-stage">
+      <canvas class="nibble-canvas" data-nibble-canvas width="800" height="390"
+        tabindex="0" role="img" aria-label="Interactive pastel fishing pond with moving fish and a controllable hook"
+        aria-describedby="nibble-instructions">Your browser does not support the fishing canvas. Use a modern browser to play.</canvas>
+    </div>
+    <div class="nibble-controls">
+      <div class="nibble-direction" aria-label="Move the hook horizontally">
+        <button class="nibble-btn" type="button" data-nibble-left aria-label="Move hook left">← Left</button>
+        <button class="nibble-btn" type="button" data-nibble-right aria-label="Move hook right">Right →</button>
+      </div>
+      <div class="nibble-control-actions">
+        <button class="nibble-btn primary" type="button" data-nibble-cast>Drop hook ↓</button>
+        <button class="nibble-btn secondary" type="button" data-nibble-reset>Start over ↻</button>
+      </div>
+    </div>
+    <p class="nibble-instructions" id="nibble-instructions">Tap or drag across the pond to aim, or use ← → / A D when the game is in view. Then select Drop hook or press Space. The hook drops slowly and reels in automatically.</p>
+    <p class="nibble-status" data-nibble-status role="status" aria-live="polite">Aim for a fish, then cast!</p>
+    <p class="nibble-note">A simplified interactive idea inspired by my in-development Nibble Fish game. Artwork and mechanics are original to this portfolio demo, not a playable build of the Unity game.</p>
+  </div>
+
  </section>
  <section class="contact-strip"><div class="container row"><div><p class="eyebrow">The next chapter</p><h2>Let's build something <span class="serif-italic">useful.</span></h2><p>Interested in how my background could support your team?</p></div><a class="btn primary" href="contact.html">Let's talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></section>
 </main>
