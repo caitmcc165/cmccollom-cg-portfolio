@@ -11,7 +11,7 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="css/style.css"><script src="js/site.js" defer></script>
+ <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script><script src="js/simulations.js" defer></script>
 </head>
 <body>
  <a class="skip" href="#main">Skip to main content</a>
@@ -24,10 +24,93 @@
  <section class="page-hero"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Selected work</p><h1>Real problems. <span class="serif-italic">Practical changes.</span></h1><p class="lead">A look at two systems implementations from my professional experience, plus the technical work I'm exploring through graduate study. Each has its own context and scope.</p></div></section>
  <section class="container case-study" id="supply-mover"><div class="case-title-row"><div><p class="eyebrow">01 / Professional implementation · 2023</p><h2>Supply Mover</h2><p class="lead">Introducing a business system that could support warehouse and commercial technician workflows.</p></div><div class="case-meta"><span>TAG Chemical Technologies</span><span>Operations Manager</span></div></div>
   <div class="case-body"><div><h3>The need</h3><p>Spreadsheet-based tracking made it harder to keep client, inventory, product, and delivery information organized across a busy operation.</p></div><div><h3>My contribution</h3><p>Supported the selection and implementation of Supply Mover, aligned workflows with daily operations, and created SOPs and supporting documentation.</p></div><div><h3>The outcome</h3><p>More structured tracking, clearer handoffs, and better coordination for weekly activity involving approximately 200 B2B clients and business partners.</p></div></div>
+
+  <div class="sim-lab" data-sim="supply" id="supply-demo">
+    <div class="sim-lab-head">
+      <div class="sim-lab-titleline"><span class="sim-lab-kicker">Explore the workflow · hands-on scenario</span><span class="sim-sample-tag">SIMULATION · FICTIONAL DATA</span></div>
+      <h3>From client request to delivery</h3>
+      <p>What happens when information gets lost between a client, the warehouse, and a transport partner? Change the handoff and follow a sample request through the process.</p>
+    </div>
+    <div class="sim-content">
+      <fieldset><legend>Choose a coordination approach</legend>
+        <div class="sim-toggle-group">
+          <label class="sim-toggle"><input type="radio" name="sim-workflow" value="notes" checked> Separate spreadsheet notes</label>
+          <label class="sim-toggle"><input type="radio" name="sim-workflow" value="documented"> Shared tracking + documented handoffs</label>
+        </div>
+      </fieldset>
+      <div class="sim-supply-options">
+        <label class="sim-check"><input type="checkbox" data-carrier-confirmed> Carrier confirmation received</label>
+        <button class="sim-action" data-order-run type="button">Run sample order ↗</button>
+      </div>
+      <div class="sim-route" data-route aria-label="Illustrative order workflow">
+        <div class="sim-route-node" data-route-node data-state="waiting" data-icon="📨"><strong>Request received</strong><small>Waiting</small></div>
+        <div class="sim-route-node" data-route-node data-state="waiting" data-icon="📦"><strong>Inventory reviewed</strong><small>Waiting</small></div>
+        <div class="sim-route-node" data-route-node data-state="waiting" data-icon="🚚"><strong>Carrier handoff</strong><small>Waiting</small></div>
+        <div class="sim-route-node" data-route-node data-state="waiting" data-icon="✓"><strong>Delivery coordinated</strong><small>Waiting</small></div>
+      </div>
+      <div class="sim-status" data-order-status role="status" aria-live="polite" aria-atomic="true">
+        <span class="sim-status-icon" aria-hidden="true">↗</span>
+        <div><h4 data-order-title>Ready to trace a sample order</h4><p data-order-description>Select a scenario, then run the sample request.</p></div>
+      </div>
+      <ul class="sim-events" data-order-events aria-label="Workflow activity"></ul>
+      <p class="sim-disclaimer">Inspired by coordination and documentation work at TAG Chemical Technologies. This is an invented teaching example—not a screenshot, replica, client record, or measured performance result from Supply Mover.</p>
+    </div>
+  </div>
   <p class="note">This is a case study of my operational implementation role, not a claim that I wrote the Supply Mover software. Detailed internal client and system data are intentionally excluded.</p>
  </section>
  <section class="container case-study" id="schedulicity"><div class="case-title-row"><div><p class="eyebrow">02 / Professional implementation · 2017</p><h2>Schedulicity</h2><p class="lead">Making the scheduling experience more organized for staff and customers.</p></div><div class="case-meta"><span>White Dragon Martial Arts</span><span>Operations Manager &amp; Lead Instructor</span></div></div>
   <div class="case-body"><div><h3>The need</h3><p>Scheduling and customer coordination were core daily workflows for a martial arts school with classes, instructors, and ongoing student programs.</p></div><div><h3>My contribution</h3><p>Selected, introduced, and trained users on Schedulicity while coordinating scheduling practices alongside membership and billing processes.</p></div><div><h3>The outcome</h3><p>A shared scheduling workflow and more consistent day-to-day coordination. Across my tenure, I also helped grow enrollment from 86 to 172 students through sales and retention efforts.</p></div></div>
+
+  <div class="sim-lab" data-sim="schedule" id="scheduling-demo">
+    <div class="sim-lab-head">
+      <div class="sim-lab-titleline"><span class="sim-lab-kicker">Try the rollout challenge · interactive scheduler</span><span class="sim-sample-tag">SIMULATION · FICTIONAL PEOPLE</span></div>
+      <h3>Welcome to the Scheduling Studio</h3>
+      <p>Three introductory lesson requests, one instructor calendar. Switch between separate notes and a shared schedule, then try booking appointments without overlaps.</p>
+    </div>
+    <div class="sim-content">
+      <fieldset><legend>How are appointments tracked?</legend>
+        <div class="sim-toggle-group">
+          <label class="sim-toggle"><input type="radio" name="sim-schedule-mode" value="notes"> Separate notes</label>
+          <label class="sim-toggle"><input type="radio" name="sim-schedule-mode" value="shared" checked> Shared schedule</label>
+        </div>
+      </fieldset>
+      <div class="sim-sched-layout">
+        <div class="sim-sched-col">
+          <fieldset><legend>01 · Select a sample request</legend>
+            <div class="sim-request-list">
+              <button class="sim-person" type="button" data-person="avery" aria-pressed="true"><span class="sim-avatar" aria-hidden="true">A</span><span><strong>Avery</strong><small>30-minute introduction</small></span></button>
+              <button class="sim-person" type="button" data-person="rowan" aria-pressed="false"><span class="sim-avatar" aria-hidden="true">R</span><span><strong>Rowan</strong><small>30-minute introduction</small></span></button>
+              <button class="sim-person" type="button" data-person="parker" aria-pressed="false"><span class="sim-avatar" aria-hidden="true">P</span><span><strong>Parker</strong><small>30-minute introduction</small></span></button>
+            </div>
+          </fieldset>
+          <ul class="sim-appointment-list" data-bookings aria-label="Confirmed sample appointments"></ul>
+        </div>
+        <div class="sim-sched-col">
+          <fieldset><legend>02 · Choose a time</legend>
+            <div class="sim-slots">
+              <button class="sim-slot" type="button" data-slot="tue4" aria-pressed="false"><strong>Tuesday · 4:00 PM</strong><small>Checking…</small></button>
+              <button class="sim-slot" type="button" data-slot="tue5" aria-pressed="false"><strong>Tuesday · 5:00 PM</strong><small>Checking…</small></button>
+              <button class="sim-slot" type="button" data-slot="wed4" aria-pressed="false"><strong>Wednesday · 4:00 PM</strong><small>Checking…</small></button>
+              <button class="sim-slot" type="button" data-slot="wed5" aria-pressed="false"><strong>Wednesday · 5:00 PM</strong><small>Checking…</small></button>
+              <button class="sim-slot" type="button" data-slot="thu4" aria-pressed="false"><strong>Thursday · 4:00 PM</strong><small>Checking…</small></button>
+            </div>
+          </fieldset>
+          <div class="sim-booking-controls">
+            <button class="sim-action" type="button" data-book disabled>Book selected time ↗</button>
+            <button class="sim-action secondary" type="button" data-restart-schedule>Reset exercise</button>
+            <span class="sim-sample-tag" data-schedule-count>0 of 3 requests scheduled</span>
+          </div>
+        </div>
+      </div>
+      <div class="sim-sched-foot">
+        <div class="sim-status" data-schedule-status role="status" aria-live="polite" aria-atomic="true">
+          <span class="sim-status-icon" aria-hidden="true">✿</span>
+          <div><h4 data-sched-title>Ready for the first request</h4><p data-schedule-feedback>Select an appointment time.</p></div>
+        </div>
+      </div>
+      <p class="sim-disclaimer">Inspired by selecting, introducing, and training staff on scheduling software at White Dragon Martial Arts. Names, times, and booking behavior are fictional, not Schedulicity product functionality or actual school records.</p>
+    </div>
+  </div>
   <p class="note">Enrollment growth reflects the broader operations, sales, and retention work during my employment—not a measured result attributable to Schedulicity alone.</p>
  </section>
  <section class="container case-study" id="technical-learning"><div class="case-title-row"><div><p class="eyebrow">03 / Academic technical practice</p><h2>Learning how software gets delivered</h2><p class="lead">I’m strengthening the technical side of my implementation background through an M.S. in DevOps at Western Governors University.</p></div><div class="case-meta"><span>DevOps &amp; Software Delivery</span></div></div>
