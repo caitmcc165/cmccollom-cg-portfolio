@@ -1,0 +1,79 @@
+
+/* Interactive case-study labs | Coastal Garden, 2026 */
+.sim-lab{position:relative;isolation:isolate;margin:34px 0 24px;border:1px solid #d7e4df;border-radius:20px;background:#fffdf8;box-shadow:0 14px 38px rgba(65,96,92,.09);overflow:hidden}
+.sim-lab::before{content:"";position:absolute;inset:0 0 auto;height:7px;background:linear-gradient(90deg,#a7cbc4 0 34%,#e3b4c0 34% 62%,#d5c39b 62% 80%,#a4c4d2 80%)}
+.sim-lab-head{padding:30px 34px 22px;background:linear-gradient(115deg,#f7faf5,#f7ede9)}
+.sim-lab-head h3{font:500 clamp(1.55rem,2.6vw,2.35rem)/1.17 var(--serif);color:#345e60;margin:8px 0 10px}
+.sim-lab-head p{color:#61787a;max-width:76ch;margin:0;font-size:.94rem}
+.sim-lab-titleline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sim-lab-kicker{font:.7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#527e80}
+.sim-sample-tag{display:inline-block;padding:6px 11px;border:1px solid #d6d6c6;border-radius:30px;background:#fff9f0;font:.68rem var(--mono);color:#766b60}
+.sim-content{padding:28px 34px 32px}
+.sim-content fieldset{border:0;padding:0;margin:0;min-width:0}
+.sim-content legend{font:700 .75rem var(--mono);letter-spacing:.045em;text-transform:uppercase;color:#587d7c;margin-bottom:11px}
+.sim-toggle-group{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:23px}
+.sim-toggle{position:relative;display:flex;align-items:center;gap:9px;cursor:pointer;border:1px solid #cfddd8;background:#f8faf5;border-radius:12px;padding:13px 15px;color:#476c6d;font-size:.88rem;font-weight:600;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+.sim-toggle:hover{transform:translateY(-2px);border-color:#90b6b0}
+.sim-toggle:has(input:checked){background:#e4f2ec;border-color:#6daca4;box-shadow:inset 0 0 0 1px #86b7ac}
+.sim-toggle input{accent-color:#5e9c95;width:17px;height:17px}
+.sim-lab button:focus-visible,.sim-lab input:focus-visible{outline:3px solid #a66f90;outline-offset:3px}
+.sim-supply-options{display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap}
+.sim-lab .sim-check{display:inline-flex;gap:10px;align-items:center;font-size:.85rem;color:#526d70;cursor:pointer}
+.sim-lab .sim-check input{accent-color:#5d9892;width:19px;height:19px}
+.sim-action{border:0;background:#416c6b;color:#fffaf2;border-radius:10px;padding:12px 19px;cursor:pointer;font:600 .86rem var(--sans);transition:background .2s,transform .2s,box-shadow .2s}
+.sim-action:hover{background:#315c5b;transform:translateY(-2px);box-shadow:0 7px 16px rgba(53,95,91,.17)}
+.sim-action:disabled{cursor:progress;opacity:.64}
+.sim-action.secondary{background:#f6f0e8;border:1px solid #d8d7cb;color:#547a7a}
+.sim-action.secondary:disabled{cursor:not-allowed}
+.sim-route{--route-progress:0%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative;margin:30px 0 20px}
+.sim-route::before,.sim-route::after{content:"";position:absolute;top:29px;left:9%;height:3px;width:82%;border-radius:6px;z-index:-1;background:#d5e4df}
+.sim-route::after{width:calc(var(--route-progress)*.82);background:#79ada4;transition:width .55s ease}
+.sim-route-node{position:relative;text-align:center;min-width:0;border-radius:12px;padding:13px 6px 14px;background:#f6f8f3;border:1px solid #e0e9df;transition:transform .25s,background .25s,box-shadow .25s}
+.sim-route-node::before{content:attr(data-icon);display:grid;place-items:center;width:36px;height:36px;border:2px solid #c2d7ce;border-radius:50%;margin:0 auto 9px;background:#fffdf7;font-size:1.2rem;transition:transform .35s,border-color .35s}
+.sim-route-node strong{display:block;font-size:.85rem;color:#416569}
+.sim-route-node small{display:block;font-size:.73rem;color:#778887;line-height:1.3;margin-top:4px}
+.sim-route-node[data-state=active]{background:#e6f1ec;box-shadow:0 8px 22px rgba(95,147,139,.12);transform:translateY(-4px)}
+.sim-route-node[data-state=active]::before{border-color:#70aea3;transform:scale(1.13)}
+.sim-route-node[data-state=done]::before{border-color:#70aea3;background:#d7ebe3}
+.sim-route-node[data-state=blocked]{background:#fff2ef;border-color:#e8c3bd}
+.sim-route-node[data-state=blocked]::before{border-color:#d58e8b;background:#ffe7e3}
+.sim-status{display:flex;align-items:flex-start;gap:14px;background:#eaf3ef;border-radius:13px;border:1px solid #d5e4df;padding:18px 20px}
+.sim-status-icon{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#d0e7e0;color:#436e68;font-size:1.16rem}
+.sim-status h4{font:600 1rem var(--sans);margin:0 0 4px;color:#365f5f}
+.sim-status p{margin:0;color:#5b7272;font-size:.89rem}
+.sim-status[data-tone=warning]{background:#fff4ee;border-color:#edcebe}
+.sim-status[data-tone=warning] .sim-status-icon{background:#fae3d9;color:#aa6961}
+.sim-status[data-tone=success]{background:#e7f5ec;border-color:#bfdbd0}
+.sim-events{margin:15px 0 0;padding:0;list-style:none;display:flex;gap:10px;flex-wrap:wrap}
+.sim-events li{color:#65817f;font:.73rem var(--mono);border-radius:30px;background:#f5f7f1;border:1px solid #dee5dd;padding:7px 11px}
+.sim-disclaimer{margin:15px 0 0;color:#778582;font-size:.77rem;line-height:1.5}
+.sim-sched-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}
+.sim-sched-col{min-width:0}
+.sim-request-list{display:grid;gap:9px}
+.sim-person{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid #dbe5df;border-radius:11px;padding:12px 14px;background:#fff;color:#4f7273;cursor:pointer;font:500 .89rem var(--sans);transition:transform .2s,border-color .2s,background .2s}
+.sim-person:hover{transform:translateX(3px);border-color:#9bc5ba}
+.sim-person[aria-pressed=true]{background:#edf5ef;border-color:#7dab9f;box-shadow:inset 3px 0 #78aaa0}
+.sim-person[data-booked=true]{opacity:.55;cursor:not-allowed}
+.sim-person .sim-avatar{display:grid;place-items:center;width:35px;height:35px;border-radius:50%;background:#f3dbe1;color:#945c75;flex:none;font-size:1rem}
+.sim-person:nth-child(2) .sim-avatar{background:#d6e6ea;color:#507786}
+.sim-person:nth-child(3) .sim-avatar{background:#e9e5d2;color:#8c7b4a}
+.sim-person strong{display:block}
+.sim-person small{display:block;font-size:.75rem;color:#788d89;margin-top:2px}
+.sim-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sim-slot{position:relative;text-align:left;background:#f8faf6;border:1px solid #d7e4dc;border-radius:12px;padding:15px 12px;min-height:86px;cursor:pointer;transition:transform .22s,background .2s,border-color .2s}
+.sim-slot:hover:not(:disabled){transform:translateY(-3px);border-color:#83ada7}
+.sim-slot[aria-pressed=true]{background:#ddefe9;border-color:#5c9c96;box-shadow:inset 0 0 0 1px #5c9c96}
+.sim-slot:disabled{opacity:.63;cursor:not-allowed}
+.sim-slot strong{display:block;color:#466b6e;font-size:.87rem}
+.sim-slot small{display:block;color:#788a85;margin-top:7px;font-size:.71rem}
+.sim-slot[data-busy=true]{background:#f7eae5;border-color:#e3c5c0}
+.sim-booking-controls{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0;align-items:center}
+.sim-appointment-list{margin:20px 0 0;display:grid;gap:6px;list-style:none;padding:0}
+.sim-appointment-list li{display:flex;gap:10px;justify-content:space-between;align-items:center;border-bottom:1px solid #e4ebe4;padding:10px 3px;font-size:.82rem;color:#537477}
+.sim-appointment-list .sim-pill{background:#e4f1e9;color:#4c7e70;border-radius:20px;padding:3px 9px;font:.67rem var(--mono)}
+.sim-sched-foot{margin-top:20px}
+.sim-soft-flash{animation:simPulse .5s ease}
+@keyframes simPulse{0%{transform:scale(.97);opacity:.6}65%{transform:scale(1.015)}100%{transform:scale(1);opacity:1}}
+@media(max-width:800px){.sim-lab-head{padding:26px 24px 20px}.sim-content{padding:23px 24px 27px}.sim-sched-layout{grid-template-columns:1fr}}
+@media(max-width:540px){.sim-lab{border-radius:14px}.sim-lab-head{padding:25px 18px 17px}.sim-content{padding:21px 17px 25px}.sim-route{gap:5px}.sim-route-node{padding:9px 3px}.sim-route-node strong{font-size:.7rem}.sim-route-node small{font-size:.65rem}.sim-route-node::before{width:31px;height:31px;font-size:1rem}.sim-sample-tag{font-size:.6rem}.sim-status{padding:14px;gap:9px}.sim-slots{gap:8px}.sim-slot{min-height:77px;padding:12px 9px}.sim-lab-head h3{font-size:1.68rem}}
+@media(prefers-reduced-motion:reduce){.sim-lab *,.sim-lab *::before,.sim-lab *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
