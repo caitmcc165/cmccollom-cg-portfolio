@@ -41,6 +41,7 @@
    reparenting the actual image does not produce a second blossom. */
 .flower-badge.flower-badge-placeholder{
   display:block;aspect-ratio:1;visibility:hidden;pointer-events:none;
+  transform:none!important;filter:none!important;
 }
 .flower-badge.flower-rolling{
   position:fixed;top:0;left:0;right:auto;
