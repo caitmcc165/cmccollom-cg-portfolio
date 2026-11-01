@@ -11,7 +11,7 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/coastal-motion.css?v=rolling-original-bloom-2"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js?v=coastal-motion-1" defer></script><script src="js/coastal-motion.js?v=rolling-original-bloom-2" defer></script>
+ <link rel="stylesheet" href="css/style.css?v=peopletrak-lavender-1"><link rel="stylesheet" href="css/coastal-motion.css?v=rolling-original-bloom-2"><link rel="stylesheet" href="css/simulations.css"><link rel="stylesheet" href="css/nibble-demo.css"><script src="js/site.js?v=coastal-motion-1" defer></script><script src="js/coastal-motion.js?v=rolling-original-bloom-2" defer></script><script src="js/nibble-demo.js" defer></script>
 </head>
 <body>
  <a class="skip" href="#main">Skip to main content</a>
@@ -82,7 +82,34 @@
   </div></section>
  <section class="quote-banner"><div class="container"><p class="eyebrow">A little about my philosophy</p><blockquote>“The most interesting problems live somewhere between <span class="serif-italic">people, processes, and possibilities.</span>”</blockquote></div></section>
  <section class="section" id="beyond"><div class="container"><div class="section-heading"><p class="eyebrow">03 / Beyond the screen</p><h2>A few things that make me <span class="serif-italic">me.</span></h2><p>Outside of work, I find inspiration in martial arts, ocean air, floral gardens, and the worlds I play and create. Australian shepherds are part of the picture, too.</p></div>
-  <div class="beyond-grid"><article class="beyond-item"><span class="symbol" aria-hidden="true">☯</span><div><h3>Martial arts</h3><p>Kung fu, tai chi, teaching, and lifelong practice.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🌊</span><div><h3>Ocean air</h3><p>Beaches, salt air, and a quiet place to reset.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🌷</span><div><h3>Botanical details</h3><p>Floral gardens, soft colors, and the beauty in small details.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🎮</span><div><h3>Gaming</h3><p>Exploring Pokémon and Palworld, and creating my own games: watercolor fishing in Nibble Fish and space survival strategy in Arkfall Frontier.</p></div></article></div>
+  <div class="beyond-grid"><article class="beyond-item"><span class="symbol" aria-hidden="true">☯</span><div><h3>Martial arts</h3><p>Kung fu, tai chi, teaching, and lifelong practice.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🌊</span><div><h3>Ocean air</h3><p>Beaches, salt air, and a quiet place to reset.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🌷</span><div><h3>Botanical details</h3><p>Floral gardens, soft colors, and the beauty in small details.</p></div></article><article class="beyond-item"><span class="symbol" aria-hidden="true">🎮</span><div><h3>Gaming</h3><p>Exploring Pokémon and Palworld, and creating my own games: watercolor fishing in Nibble Fish and space survival strategy in Arkfall Frontier.</p><a class="nibble-try-link" href="#nibble-fish-demo">▶ Try Nibble Fish</a></div></article></div>
+  <div class="nibble-demo" id="nibble-fish-demo" data-nibble-game>
+    <div class="nibble-head">
+      <div><p class="nibble-kicker">A tiny fishing break · Playable sketch</p>
+        <h3>Nibble Fish <span class="serif-italic">mini pond.</span></h3>
+        <p>A handful of pastel fish, one little hook. See if you can catch three!</p>
+      </div>
+      <div class="nibble-score" aria-label="Fish caught"><span aria-hidden="true">🐟</span> Caught <strong data-nibble-count>0 / 3</strong></div>
+    </div>
+    <div class="nibble-stage">
+      <canvas class="nibble-canvas" data-nibble-canvas width="800" height="390"
+        tabindex="0" role="img" aria-label="Interactive pastel fishing pond with moving fish and a controllable hook"
+        aria-describedby="nibble-instructions">Your browser does not support the fishing canvas. Use a modern browser to play.</canvas>
+    </div>
+    <div class="nibble-controls">
+      <div class="nibble-direction" aria-label="Move the hook horizontally">
+        <button class="nibble-btn" type="button" data-nibble-left aria-label="Move hook left">← Left</button>
+        <button class="nibble-btn" type="button" data-nibble-right aria-label="Move hook right">Right →</button>
+      </div>
+      <div class="nibble-control-actions">
+        <button class="nibble-btn primary" type="button" data-nibble-cast>Drop hook ↓</button>
+        <button class="nibble-btn secondary" type="button" data-nibble-reset>Start over ↻</button>
+      </div>
+    </div>
+    <p class="nibble-instructions" id="nibble-instructions">Tap or drag across the pond to aim. Use the left/right buttons (or ← → / A D with the pond focused), then Drop hook or press Space. The hook reels in automatically.</p>
+    <p class="nibble-status" data-nibble-status role="status" aria-live="polite">Aim for a fish, then cast!</p>
+    <p class="nibble-note">A simplified interactive idea inspired by my in-development Nibble Fish game. Artwork and mechanics are original to this portfolio demo, not a playable build of the Unity game.</p>
+  </div>
   <div class="actions" style="margin-top:32px"><a class="text-link" href="about.html">More of my story ↗</a></div>
  </div></section>
  <section class="contact-strip"><div class="container row"><div><p class="eyebrow">04 / Let's connect</p><h2>Have an idea worth <span class="serif-italic">untangling?</span></h2><p>I'm interested in implementation, business systems support, and technical project coordination.</p></div><a class="btn primary" href="contact.html">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></section>
