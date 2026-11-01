@@ -34,7 +34,10 @@
 /* Four selected work cards: two balanced rows on desktop, single column on phones. */
 .project-grid.four-up{grid-template-columns:repeat(2,minmax(0,1fr))}
 .project-grid.four-up .project-card:last-child{grid-column:auto}
-.project-art.education{background:linear-gradient(145deg,#e5efeb,#e5dbe3)}
+.project-art.education{background:linear-gradient(135deg,#A8D7D0 0%,#D3D9E8 48%,#F0BFCF 100%)}
+.project-art.education::after{content:"";position:absolute;width:230px;height:230px;right:-50px;bottom:-135px;border:2px solid rgba(255,255,255,.52);border-radius:50%;pointer-events:none}
+.project-art.education svg{filter:drop-shadow(0 12px 10px rgba(55,91,98,.2))}
+.case-study,.sim-lab{scroll-margin-top:110px}
 @media(max-width:640px){
   .project-grid.four-up{grid-template-columns:1fr}
   .project-grid.four-up .project-card:last-child{grid-column:auto}
