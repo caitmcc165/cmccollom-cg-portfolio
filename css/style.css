@@ -42,3 +42,21 @@
   .project-grid.four-up{grid-template-columns:1fr}
   .project-grid.four-up .project-card:last-child{grid-column:auto}
 }
+
+
+/* Selected Work: five case studies, with the personal game highlighted separately. */
+.project-grid.five-up{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-grid.five-up .project-card-feature{
+  grid-column:1 / -1;
+  display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);
+}
+.project-grid.five-up .project-card-feature .project-art{height:100%;min-height:225px}
+.project-grid.five-up .project-card-feature .project-card-body{align-self:center}
+.project-grid.five-up .project-card-feature p{min-height:0;max-width:58ch}
+.project-art.nibble{background:linear-gradient(145deg,#B6E1DB,#BBD9EC 55%,#E3D8EC)}
+.project-art.nibble svg{width:175px;height:135px;max-width:92%}
+@media(max-width:720px){
+  .project-grid.five-up{grid-template-columns:1fr}
+  .project-grid.five-up .project-card-feature{grid-column:auto;grid-template-columns:1fr}
+  .project-grid.five-up .project-card-feature .project-art{height:175px;min-height:0}
+}
