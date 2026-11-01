@@ -55,7 +55,7 @@
         for (let i = 0; i < stages.length; i++) {
           paintStep(i, 'active');
           show(stages[i], 'Following sample request R-104 through the handoff.');
-          if (!reduce) await delay(570);
+          if (!reduce) await delay(5000);
           if (i === stopAt) {
             paintStep(i, 'blocked');
             addEvent('Missing carrier confirmation');
