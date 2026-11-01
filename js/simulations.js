@@ -14,18 +14,10 @@
     const title = supply.querySelector('[data-order-title]');
     const description = supply.querySelector('[data-order-description]');
     const events = supply.querySelector('[data-order-events]');
-    const timer = supply.querySelector('[data-order-timer]');
     const symbols = ['📨', '📦', '🚚', '✓'];
     const stages = ['Request received', 'Inventory reviewed', 'Carrier handoff', 'Delivery coordinated'];
     const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms));
-    // Five complete seconds per step, regardless of OS reduced-motion settings.
-    // Reduced motion disables decorative motion, never time needed to read.
-    async function holdReadableStep(stepIndex) {
-      for (let seconds = 5; seconds > 0; seconds--) {
-        if (timer) timer.textContent = 'Step ' + (stepIndex + 1) + ' of ' + nodes.length + ' · ' + seconds + 's remaining';
-        await delay(1000);
-      }
-    }
+    // Keep each step readable for three full seconds, including with reduced motion enabled.
 
     function paintStep(index, state) {
       nodes[index].dataset.state = state;
@@ -49,7 +41,6 @@
       nodes.forEach((node, i) => { node.dataset.state = 'waiting'; node.querySelector('small').textContent = 'Waiting'; node.querySelector('strong').textContent = stages[i]; node.dataset.icon = symbols[i]; });
       route.style.setProperty('--route-progress', '0%');
       events.replaceChildren();
-      if (timer) timer.textContent = '5 seconds per step';
       show('Ready to trace a sample order', 'Change the workflow and carrier confirmation, then run the scenario.');
     }
     choices.forEach(input => input.addEventListener('change', reset));
@@ -64,7 +55,7 @@
         for (let i = 0; i < stages.length; i++) {
           paintStep(i, 'active');
           show(stages[i], 'Following sample request R-104 through the handoff.');
-          await holdReadableStep(i);
+          await delay(3000);
           if (i === stopAt) {
             paintStep(i, 'blocked');
             addEvent('Missing carrier confirmation');
@@ -86,7 +77,6 @@
           }
         }
       } finally {
-        if (timer) timer.textContent = 'Run complete · 5 seconds per step';
         run.disabled = false; choices.forEach(el => el.disabled = false); checkbox.disabled = false;
       }
     });
