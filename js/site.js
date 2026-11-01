@@ -28,8 +28,8 @@
     document.documentElement.classList.toggle('motion-off', !motionOn);
     if (motionButton) {
       motionButton.setAttribute('aria-pressed',String(!motionOn));
-      motionButton.setAttribute('aria-label',motionOn ? 'Pause decorative petal animation' : 'Play decorative petal animation');
-      motionButton.textContent = motionOn ? '❚❚  Pause petals' : '▶  Play petals';
+      motionButton.setAttribute('aria-label',motionOn ? 'Pause all decorative animations' : 'Play all decorative animations');
+      motionButton.textContent = motionOn ? '❚❚  Pause motion' : '▶  Play motion';
     }
   }
   updateMotion();
