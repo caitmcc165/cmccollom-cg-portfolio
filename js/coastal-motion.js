@@ -44,6 +44,8 @@
   window.addEventListener('scroll', queueUpdate, {passive:true});
   window.addEventListener('resize', queueUpdate, {passive:true});
   window.addEventListener('pageshow', queueUpdate);
+  const motionToggle = document.querySelector('.motion-control');
+  if (motionToggle) motionToggle.addEventListener('click', queueUpdate);
   if (reduce.addEventListener) reduce.addEventListener('change', queueUpdate);
   queueUpdate();
 })();
