@@ -96,7 +96,7 @@
     }
 
     if (phase === 'dropping') {
-      hookY = Math.min(floor, hookY + 205 * dt);
+      hookY = Math.min(floor, hookY + 90 * dt);
       for (const f of fishes) {
         const sway = ambient() ? Math.sin(time * 2 + f.y) * 3 : 0;
         if (Math.abs(hookX - f.x) < 30 * f.size + 15 &&
@@ -112,7 +112,7 @@
         setStatus('Reeling the hook back up…');
       }
     } else if (phase === 'reeling') {
-      hookY = Math.max(surface, hookY - 280 * dt);
+      hookY = Math.max(surface, hookY - 150 * dt);
       if (hookY <= surface) finishCast();
     }
   }
@@ -271,19 +271,41 @@
   castButton.addEventListener('click',cast);
   resetButton.addEventListener('click',reset);
 
+  // Arrow keys work as soon as the visible game is the current page activity.
+  // Do not hijack typing, page navigation, or buttons elsewhere on the page.
+  function gameAcceptsKeys(event) {
+    const active = document.activeElement;
+    const tag = active && active.tagName;
+    if (active && (active.isContentEditable || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT')) return false;
+    if (root.contains(active)) return true;
+    if (active !== document.body && active !== document.documentElement && active !== null) return false;
+    const bounds = root.getBoundingClientRect();
+    return bounds.top < window.innerHeight * .8 && bounds.bottom > window.innerHeight * .2;
+  }
+  function normalizedKey(e) {
+    return e.code || ({'a':'KeyA','A':'KeyA','d':'KeyD','D':'KeyD','r':'KeyR','R':'KeyR',' ':'Space'}[e.key] || e.key);
+  }
   window.addEventListener('keydown',e=>{
-    if(!root.contains(document.activeElement))return;
-    // Leave Space and Enter free to activate focused buttons naturally.
-    if(document.activeElement.tagName==='BUTTON' && (e.code==='Space'||e.code==='Enter'))return;
-    const key=e.code;
-    if(key==='ArrowLeft'||key==='KeyA') {keys.left=true;e.preventDefault();}
-    if(key==='ArrowRight'||key==='KeyD'){keys.right=true;e.preventDefault();}
+    if(!gameAcceptsKeys(e))return;
+    // Buttons retain their natural Enter/Space activation.
+    if(document.activeElement && document.activeElement.tagName === 'BUTTON' &&
+       (e.code==='Space'||e.code==='Enter'||e.key===' '||e.key==='Enter'))return;
+    const key=normalizedKey(e);
+    if(key==='ArrowLeft'||key==='KeyA'){
+      if (!keys.left && phase!=='won') hookX=clamp(hookX-24,38,W-38);
+      keys.left=true;e.preventDefault();
+    }
+    if(key==='ArrowRight'||key==='KeyD'){
+      if (!keys.right && phase!=='won') hookX=clamp(hookX+24,38,W-38);
+      keys.right=true;e.preventDefault();
+    }
     if(key==='Space'||key==='ArrowDown'){e.preventDefault();if(!e.repeat)cast();}
-    if(key==='KeyR'){e.preventDefault();reset();}
+    if(key==='KeyR'){e.preventDefault();if(!e.repeat)reset();}
   });
   window.addEventListener('keyup',e=>{
-    if(e.code==='ArrowLeft'||e.code==='KeyA')keys.left=false;
-    if(e.code==='ArrowRight'||e.code==='KeyD')keys.right=false;
+    const key=normalizedKey(e);
+    if(key==='ArrowLeft'||key==='KeyA')keys.left=false;
+    if(key==='ArrowRight'||key==='KeyD')keys.right=false;
   });
   window.addEventListener('blur',()=>{keys.left=keys.right=false;holding.left=holding.right=false;});
 
