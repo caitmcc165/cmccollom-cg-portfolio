@@ -77,3 +77,9 @@
 @media(max-width:800px){.sim-lab-head{padding:26px 24px 20px}.sim-content{padding:23px 24px 27px}.sim-sched-layout{grid-template-columns:1fr}}
 @media(max-width:540px){.sim-lab{border-radius:14px}.sim-lab-head{padding:25px 18px 17px}.sim-content{padding:21px 17px 25px}.sim-route{gap:5px}.sim-route-node{padding:9px 3px}.sim-route-node strong{font-size:.7rem}.sim-route-node small{font-size:.65rem}.sim-route-node::before{width:31px;height:31px;font-size:1rem}.sim-sample-tag{font-size:.6rem}.sim-status{padding:14px;gap:9px}.sim-slots{gap:8px}.sim-slot{min-height:77px;padding:12px 9px}.sim-lab-head h3{font-size:1.68rem}}
 @media(prefers-reduced-motion:reduce){.sim-lab *,.sim-lab *::before,.sim-lab *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* Small links from the homepage project cards to live demonstrations */
+.project-card a.sim-quick-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;margin-left:0;border-bottom:0;background:#e6f3ee;color:#426f6b;padding:9px 13px;border-radius:24px;font-size:.79rem;font-weight:700;transition:background .2s,transform .2s,box-shadow .2s}
+.project-card a.sim-quick-link:hover{background:#d3e9e1;transform:translateY(-2px);box-shadow:0 5px 14px rgba(64,112,103,.13)}
+.project-card:has(.sim-quick-link) .project-card-body{padding-bottom:23px}
