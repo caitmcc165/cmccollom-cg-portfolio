@@ -11,7 +11,7 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script><script src="js/simulations.js" defer></script>
+ <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/simulations.css"><script src="js/site.js" defer></script><script src="js/simulations.js?v=readable-5s-2" defer></script>
 </head>
 <body>
  <a class="skip" href="#main">Skip to main content</a>
@@ -41,6 +41,7 @@
       <div class="sim-supply-options">
         <label class="sim-check"><input type="checkbox" data-carrier-confirmed> Carrier confirmation received</label>
         <button class="sim-action" data-order-run type="button">Run sample order ↗</button>
+        <span class="sim-sample-tag" data-order-timer aria-live="off">5 seconds per step</span>
       </div>
       <div class="sim-route" data-route aria-label="Illustrative order workflow">
         <div class="sim-route-node" data-route-node data-state="waiting" data-icon="📨"><strong>Request received</strong><small>Waiting</small></div>
