@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+ <defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F8F0DE"/><stop offset=".55" stop-color="#F0F0E9"/><stop offset="1" stop-color="#D6E9E7"/></linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A8D2D6"/><stop offset="1" stop-color="#79B3BD"/></linearGradient>
+  <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F2E5D3"/><stop offset="1" stop-color="#E5CFB7"/></linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#F9F4EB" stop-opacity=".4"/><stop offset="1" stop-color="#F9F4EB" stop-opacity="0"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+ </defs>
+ <rect width="1600" height="900" fill="url(#sky)"/>
+ <circle cx="1270" cy="176" r="105" fill="#FFF9E7" opacity=".85" filter="url(#soft)"/>
+ <path d="M0 532C185 519 292 543 453 530c190-16 290-49 481-42 208 8 414 45 666 9v403H0Z" fill="#B9D9D4" opacity=".75"/>
+ <path d="M0 571c248-32 380 28 618-7 250-38 557 36 982-13v349H0Z" fill="url(#sea)"/>
+ <path d="M0 628c210-12 289 23 479 11 310-18 470-6 696 17 165 16 304-7 425-18" stroke="#F9F6EA" stroke-width="4" opacity=".58"/>
+ <path d="M0 690c174-19 360 23 558 9 269-20 369-4 607 6 164 8 315-14 435-1" stroke="#F7F4E8" stroke-width="3" opacity=".35"/>
+ <path d="M0 738c275-34 439 28 690 3 282-29 650 36 910-4v163H0Z" fill="url(#sand)" opacity=".92"/>
+ <path d="M0 801c263-39 484 12 744 0 306-11 598-3 856 10v89H0Z" fill="#F5E8D8"/>
+ <g opacity=".72">
+  <path d="m1168 536 20-126 4 126Z" fill="#FFF8E9"/><path d="m1188 410 12 127h-12Z" fill="#E9DFCB"/><path d="M1161 539h52" stroke="#A18B6C" stroke-width="3"/>
+  <path d="m1398 571 17-88 3 88Z" fill="#FFF8E9"/><path d="m1416 481 10 90h-10Z" fill="#EFE3D2"/><path d="M1390 574h48" stroke="#A18B6C" stroke-width="3"/>
+ </g>
+ <!-- tropical palms at far right, subtle and watercolor-esque -->
+ <g opacity=".55" stroke-linecap="round">
+  <path d="M1495 900c-9-183-37-328-24-562" stroke="#988E5D" stroke-width="18"/>
+  <path d="M1471 339Q1337 232 1256 292Q1378 282 1471 350Z" fill="#8AA27C"/>
+  <path d="M1471 339Q1395 196 1311 179Q1406 200 1471 356Z" fill="#9DAF86"/>
+  <path d="M1471 339Q1486 152 1429 98Q1451 207 1466 347Z" fill="#7F9D82"/>
+  <path d="M1471 339Q1538 200 1600 221L1600 254Q1522 257 1471 353Z" fill="#8DAC8B"/>
+  <path d="M1471 339Q1539 316 1600 383v40Q1560 358 1471 353Z" fill="#A8BA8D"/>
+  <path d="M1471 339Q1398 379 1362 470Q1426 408 1471 353Z" fill="#8AA67E"/>
+ </g>
+ <!-- pastel bougainvillea high left -->
+ <g opacity=".75"><path d="M0 0C97 85 182 32 221 163" stroke="#899D7C" stroke-width="8"/>
+  <g fill="#EA9EAD"><ellipse cx="59" cy="62" rx="28" ry="18" transform="rotate(-23 59 62)"/><ellipse cx="92" cy="84" rx="23" ry="14" transform="rotate(36 92 84)"/><ellipse cx="147" cy="80" rx="24" ry="16" transform="rotate(-20 147 80)"/><ellipse cx="173" cy="126" rx="20" ry="13" transform="rotate(38 173 126)"/><ellipse cx="198" cy="149" rx="16" ry="12" transform="rotate(-30 198 149)"/></g>
+  <g fill="#FFF5EF" opacity=".65"><circle cx="62" cy="61" r="5"/><circle cx="93" cy="83" r="4"/><circle cx="147" cy="80" r="5"/></g>
+ </g>
+ <rect width="1600" height="900" fill="url(#fade)"/>
+</svg>
