@@ -60,3 +60,10 @@
   .project-grid.five-up .project-card-feature{grid-column:auto;grid-template-columns:1fr}
   .project-grid.five-up .project-card-feature .project-art{height:175px;min-height:0}
 }
+
+/* Arkfall Frontier · a strategy-systems case study, designed to fit the existing coastal palette */
+.project-art.arkfall{background:linear-gradient(145deg,#E8EFF2 0%,#CBDDDC 50%,#F0DFDF 100%)}
+.project-art.arkfall svg{width:min(90%,240px);height:auto;max-height:160px;filter:drop-shadow(0 8px 18px rgba(44,78,83,.08))}
+.project-card-feature .project-card-body{padding-block:30px}
+.case-study#arkfall-frontier .practice-panel{background:linear-gradient(130deg,#EEF4F3,#F8F0ED)}
+@media(max-width:640px){.project-art.arkfall svg{max-height:125px}}
