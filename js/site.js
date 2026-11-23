@@ -61,11 +61,11 @@
   }
 
   const steps = [
-    {name:'Listen & map',desc:'Understand the people involved, the current workflow, and the problem the system actually needs to solve. Define what success would look like.'},
-    {name:'Choose & configure',desc:'Evaluate a practical solution, clarify scope, and prepare the configurations that support real day-to-day operations.'},
-    {name:'Document & coordinate',desc:'Create clear procedures, templates, and ownership so teams can work consistently instead of relying on memory.'},
-    {name:'Train & support',desc:'Help users build confidence with the new process through approachable instruction, feedback, and follow-through.'},
-    {name:'Refine & improve',desc:'Observe what works after rollout, resolve friction, and improve the process as actual usage reveals new needs.'},
+    {name:'Understand the whole',desc:'Look at the people, incentives, constraints, and consequences before proposing a change. What is really happening, and whom does it affect?'},
+    {name:'Challenge assumptions',desc:'Invite people with different expertise to test the first idea, uncover hidden tradeoffs, and consider alternatives seriously.'},
+    {name:'Shape the direction',desc:'Use what the team knows to choose priorities and define what a better experience or system should accomplish.'},
+    {name:'Coordinate strengths',desc:'Help capable contributors own their specialties, clarify decisions and dependencies, and make space for honest debate.'},
+    {name:'Test & refine',desc:'See how the idea behaves, notice unintended effects, and improve the direction based on what actually happens.'},
   ];
   const stepButtons = [...document.querySelectorAll('[data-step]')];
   const stepTitle = document.getElementById('step-title');
