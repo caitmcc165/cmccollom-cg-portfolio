@@ -42,20 +42,35 @@
     const bounds = anchor.getBoundingClientRect();
     const size = parseFloat(window.getComputedStyle(anchor).width) || 118;
     const scroll = Math.max(0, window.scrollY || window.pageYOffset || 0);
-    const travel = Math.max(400, Math.min(720, window.innerHeight * .88));
-    const p = clamp(scroll / travel);
+    const viewportHeight = window.innerHeight;
+    const viewportWidth = document.documentElement.clientWidth;
+
+    // Keep the original flower in its portrait position until scrolling
+    // reaches it. On narrow screens the portrait starts below the fold.
+    const start = Math.max(0, bounds.top + scroll - viewportHeight * .68);
+    if (scroll <= start) {
+      restoreToPortrait();
+      return;
+    }
+
+    const travel = Math.max(400, Math.min(720, viewportHeight * .88));
+    const p = clamp((scroll - start) / travel);
     const eased = p * p * (3 - 2 * p);
 
-    // Begin exactly where the blossom is above Caitlin's head.
-    // Then roll towards the right edge, never over the main text column.
-    const destinationX = window.innerWidth - size * .76;
-    const destinationY = window.innerHeight * (.46 + .09 * Math.sin(scroll / 390));
-    const x = lerp(bounds.left, destinationX, eased);
-    const y = lerp(bounds.top, destinationY, eased);
+    // Roll towards the original right-edge destination. Keep the blossom
+    // inside the visible viewport and below the sticky navigation.
+    const destinationX = viewportWidth - size * .76;
+    const destinationY = viewportHeight * (.46 + .09 * Math.sin(scroll / 390));
+    const x = Math.max(0, Math.min(destinationX, lerp(bounds.left, destinationX, eased)));
+    const header = document.querySelector('.site-header');
+    const headerBottom = header ? Math.max(0, header.getBoundingClientRect().bottom) : 0;
+    const minY = Math.min(headerBottom + 4, Math.max(0, viewportHeight - size));
+    const maxY = Math.max(minY, viewportHeight - size - 4);
+    const y = Math.max(minY, Math.min(maxY, lerp(bounds.top, destinationY, eased)));
 
     // Rotation directly tracks the scroll distance, so reversing scroll
     // direction automatically and smoothly reverses the rolling direction.
-    const degrees = 15 - scroll * .29;
+    const degrees = 15 - (scroll - start) * .29;
 
     flower.style.setProperty('--flower-width', size + 'px');
     flower.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + degrees.toFixed(1) + 'deg)';
