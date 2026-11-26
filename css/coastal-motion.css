@@ -69,3 +69,13 @@
 @media(prefers-reduced-motion:reduce){
  .hero-water-motion{display:none!important}
 }
+
+/* Interior pages use the same blossom and scroll controller, with their own
+   hero anchor. Direct-child positioning stops applying when the flower rolls. */
+.page-hero > .flower-badge{
+  top:18px;right:clamp(12px,3vw,42px);z-index:2;
+  pointer-events:none;user-select:none;
+}
+@media(max-width:640px){
+  .page-hero > .flower-badge{top:8px;right:12px;width:64px}
+}

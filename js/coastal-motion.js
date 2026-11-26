@@ -1,4 +1,4 @@
-/* Coastal Garden: the portrait's original cherry blossom rolls with page scroll.
+/* Coastal Garden: the original cherry blossom on every main page rolls with page scroll.
    No duplicated flower. Scroll down rotates counterclockwise, up clockwise. */
 (() => {
   'use strict';
@@ -21,7 +21,7 @@
     return !reduceMotion.matches && !document.documentElement.classList.contains('motion-off');
   }
 
-  function restoreToPortrait() {
+  function restoreToOrigin() {
     if (flower.parentElement !== origin) {
       flower.classList.remove('flower-rolling');
       flower.style.removeProperty('--flower-width');
@@ -33,23 +33,23 @@
   function render() {
     scheduled = false;
     if (!enabled()) {
-      restoreToPortrait();
+      restoreToOrigin();
       return;
     }
 
     // The invisible anchor retains the original flower's precise responsive
-    // position over the portrait, even when the real image travels down-page.
+    // position in the page hero, even when the real image travels down-page.
     const bounds = anchor.getBoundingClientRect();
     const size = parseFloat(window.getComputedStyle(anchor).width) || 118;
     const scroll = Math.max(0, window.scrollY || window.pageYOffset || 0);
     const viewportHeight = window.innerHeight;
     const viewportWidth = document.documentElement.clientWidth;
 
-    // Keep the original flower in its portrait position until scrolling
-    // reaches it. On narrow screens the portrait starts below the fold.
+    // Keep the flower in its original hero position until scrolling reaches
+    // it. On narrow home screens the portrait starts below the fold.
     const start = Math.max(0, bounds.top + scroll - viewportHeight * .68);
     if (scroll <= start) {
-      restoreToPortrait();
+      restoreToOrigin();
       return;
     }
 
